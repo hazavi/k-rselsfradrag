@@ -24,19 +24,19 @@ namespace kørselsfradrag
                 double fradrag = kilometerBeregner.BeregnPris();
                 fradrag = Math.Round(fradrag + bropenge, 2);
 
-                Console.WriteLine($"Fradrag for {kilometerBeregner.AntalKilometer} kilometer er: {fradrag.ToString("N2")} kr.");
+                Console.WriteLine($"\nFradrag for {kilometerBeregner.AntalKilometer} kilometer er: {fradrag.ToString("N2")} kr.");
             }
             else
             {
-                Console.WriteLine("Ugyldig indtastning. Indtast venligst et tal.");
+                Console.WriteLine("\nUgyldig indtastning. Indtast venligst et tal.");
             }
 
 
 
-            Console.WriteLine("\nVil du lave en ny beregning? (ja/nej)");
-            string svar = Console.ReadLine();
+            Console.Write("\nVil du lave en ny beregning? (ja/nej) \nvalg: ");
+            string valg = Console.ReadLine();
 
-            if (svar.ToLower() == "ja" || svar.ToLower() == "j")
+            if (valg.ToLower() == "ja" || valg.ToLower() == "j")
             {
                 Start();
 
@@ -48,8 +48,9 @@ namespace kørselsfradrag
         }
         private int Bro()
         {
-            Console.WriteLine("Hvad for en bro har du taget (1/2/3)");
+            Console.WriteLine("\nHvad for en bro har du taget (1/2/3)");
             Console.WriteLine("(1) Ingen bro \n(2) Storebæltsbroen \n(3) Øresundsbroen");
+            Console.Write("valg: ");
 
             int valg = int.Parse(Console.ReadLine());
             if (valg == 0 || valg > 3)
